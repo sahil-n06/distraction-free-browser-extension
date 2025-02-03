@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Monitor Extension",
+    "version": "1.0",
+    "description": "Warns you when you switch tabs or change desktops by turning the screen red.",
+    "permissions": ["tabs", "storage", "windows"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "host_permissions": ["<all_urls>"]
+}
